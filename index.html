@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya Nayak</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Locomotive Scroll CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/locomotive-scroll/dist/locomotive-scroll.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cause:wght@100..900&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <!-- Lottie -->
+    <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.9.14/dist/dotlottie-wc.js" type="module"></script>
+</head>
+<body>
+   
+        <header class="header">
+            <div class="logo">
+                <h2>Adi's <span id="changingtext"></span></h2>
+            </div>
+            <nav class="nav">
+                <ul class="logo">
+                    <li><a href="#home" data-scroll-to>Home</a></li>
+                    <li><a href="#experience" data-scroll-to>About</a></li>
+                    <li><a href="#projects" data-scroll-to>Projects</a></li>
+                    <li><a href="#contact" data-scroll-to>Contact</a></li>
+                </ul>
+            </nav>
+            <i id="menu" class="fa-solid fa-bars"></i>
+            <button class="resumebtn" onclick="openModal()">RESUME <i class="fa-solid fa-download"></i></button>
+        </header>
+
+        <section id="home" class="home">
+            <div id="picimg">
+                <img src="adi2.jpeg" alt="">
+            </div>
+            <div class="text">
+                <h3 data-scroll data-scroll-speed="2" style="opacity:0.79">Welcome, Namasthe!</h3>
+                <h1>I'm Aditya Nayak</h1>
+                <div data-scroll data-scroll-class="appear" class="info">
+                    FULL STACK DEV | TECH BUILDER
+                </div>
+                <div class="icons">
+                    <i class="fa-brands fa-square-github" data-link="https://github.com/CoderAdityaNayak"></i>
+                    <i class="fa-brands fa-linkedin-in" data-link="https://www.linkedin.com/in/adinyk/"></i>
+                    <i class="fa-brands fa-x-twitter" data-link="x.com/@_Aditya_Nayak"></i>
+                    <i class="fa-brands fa-whatsapp" data-link="whatsapp.com/adistar"></i>
+                </div>
+                <div id="linktext">Welcome to my Portfolio</div>
+            </div>
+        </section>
+ <div data-scroll-container>
+        <h3 data-scroll data-scroll-speed="2" style="opacity:0.79">Welcome, Namasthe!</h3>
+</div>
+        <section id="experience" class="experience">
+            <h2 class="section-title">Who I am?</h2>
+            <div class="experience-info">
+                <div class="grid">
+                    <div class="grid-card">
+                        <i class="fa-solid fa-laptop"></i>
+                        <span>FULL STACK DEVELOPER</span>
+                        <h3>Self Taught</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                    <div class="grid-card">
+                        <i class="fa-solid fa-brain"></i>
+                        <span>TECH BUILDER</span>
+                        <h3>Passionate and Creative</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div id="modal" class="modal">
+            <div class="grid-wrapper">
+                <div class="modal-content">
+                    <div class="resumeinfo1">
+                        <button class="modal-close" onclick="closeModal()">&times;</button>
+                        <h2>Download Aditya Nayak's Resume</h2>
+                        <p>Thanks for grabbing my resume! I'm always excited to discuss tech, new ideas, or how I can contribute to your team. Let's connect.</p>
+                        <a href="adiresume.pdf" download="Aditya_Resume.pdf">
+                            <button class="button" type="button">
+                                <span class="button__text">RESUME</span>
+                                <span class="button__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 35" id="bdd05811-e15d-428c-bb53-8661459f9307" data-name="Layer 2" class="svg"><path d="M17.5,22.131a1.249,1.249,0,0,1-1.25-1.25V2.187a1.25,1.25,0,0,1,2.5,0V20.881A1.25,1.25,0,0,1,17.5,22.131Z"></path><path d="M17.5,22.693a3.189,3.189,0,0,1-2.262-.936L8.487,15.006a1.249,1.249,0,0,1,1.767-1.767l6.751,6.751a.7.7,0,0,0,.99,0l6.751-6.751a1.25,1.25,0,0,1,1.768,1.767l-6.752,6.751A3.191,3.191,0,0,1,17.5,22.693Z"></path><path d="M31.436,34.063H3.564A3.318,3.318,0,0,1,.25,30.749V22.011a1.25,1.25,0,0,1,2.5,0v8.738a.815.815,0,0,0,.814.814H31.436a.815.815,0,0,0,.814-.814V22.011a1.25,1.25,0,1,1,2.5,0v8.738A3.318,3.318,0,0,1,31.436,34.063Z"></path></svg></span>
+                            </button>
+                        </a>
+                    </div>
+                    <dotlottie-wc src="https://lottie.host/3428110b-8c32-4215-a21a-5d20e20beaec/UtNvbzrjBF.lottie" style="width: 400px; height: 400px" autoplay loop></dotlottie-wc>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-title">
+            Project Printango: HyperLocal Printing Service
+        </div>
+
+        <div class="mainproject">
+            <div class="videocontainer">
+                <video controls loop autoplay muted src="printango.mp4"></video>
+                <h3>Printango Demo Video</h3>
+                <p>Best Project Award — IDT exhibition recognition (from CSE A)</p>
+                <p>Current Status: Feature-complete; scaling for user testing</p>
+            </div>
+            <div class="mainprojectinfo">
+                <h2>Printango Web - For general public</h2>
+                <h2>Printango CoPilot - Automation for Shopkeepers</h2>
+                <br>
+                <strong>The Problem & Opportunity</strong><br>
+                <strong>Problem</strong>: Printing services are scattered — users must visit physical shops or use multiple platforms to find, compare, and order prints<br>
+                <strong>Our Solution</strong>: Hyperlocal print shop discovery platform connecting customers with nearby printing vendors<br>
+                <strong>Market:</strong> Underserved segment of students, creators, and small businesses needing accessible, affordable printing<br>
+                <div class="dropdown">
+                    <button id="printangobutton" onclick="toggle()">Show Details</button>
+                    <div id="content" class="content">
+                        <p>Frontend: HTML/CSS/JavaScript<br>
+                        Backend: Supabase (authentication, database, RLS policies)<br>
+                        Maps: Leaflet.js (geolocation and shop discovery)<br>
+                        Documents: PDF.js (document preview and handling)<br>
+                        Automation: Python PyAutoGUI CoPilot<br>
+                        Authentication: Google OAuth via Supabase</p>
+                    </div>
+                    <h5><br>For this project, I worked as the <span id="role" class="fade"></span></h5>
+                </div>
+            </div>
+        </div>
+
+        <section id="projects" class="projects">
+            <div class="section-title">My Projects</div>
+            <div class="projectclass">
+                <div class="projectcard">
+                    <img src="https://imgs.search.brave.com/dBtpiaT6AyutJi6ES3iPCnFWS4SqRi32iRtTNP2d9_Q/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zMy1h/bHBoYS5maWdtYS5j/b20vaHViL2ZpbGUv/NDA5MzE4ODYzMC81/NjFkZmUzZS1lNWY4/LTQxNWMtOWIyNi1m/YmRmOTQ4OTc3MjIt/Y292ZXIucG5n" alt="">
+                    <h1>Printango <i class="fa-solid fa-print"></i></h1>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel quod quis libero dolor labore error facilis culpa? Doloribus sunt id est eveniet tempore delectus! Accusamus omnis nisi excepturi ut debitis!</p>
+                    <button class="githubbutton">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 0.296997C5.37 0.296997 0 5.67 0 12.297C0 17.6 3.438 22.097 8.205 23.682C8.805 23.795 9.025 23.424 9.025 23.105C9.025 22.82 9.015 22.065 9.01 21.065C5.672 21.789 4.968 19.455 4.968 19.455C4.422 18.07 3.633 17.7 3.633 17.7C2.546 16.956 3.717 16.971 3.717 16.971C4.922 17.055 5.555 18.207 5.555 18.207C6.625 20.042 8.364 19.512 9.05 19.205C9.158 18.429 9.467 17.9 9.81 17.6C7.145 17.3 4.344 16.268 4.344 11.67C4.344 10.36 4.809 9.29 5.579 8.45C5.444 8.147 5.039 6.927 5.684 5.274C5.684 5.274 6.689 4.952 8.984 6.504C9.944 6.237 10.964 6.105 11.984 6.099C13.004 6.105 14.024 6.237 14.984 6.504C17.264 4.952 18.269 5.274 18.269 5.274C18.914 6.927 18.509 8.147 18.389 8.45C19.154 9.29 19.619 10.36 19.619 11.67C19.619 16.28 16.814 17.295 14.144 17.59C14.564 17.95 14.954 18.686 14.954 19.81C14.954 21.416 14.939 22.706 14.939 23.096C14.939 23.411 15.149 23.786 15.764 23.666C20.565 22.092 24 17.592 24 12.297C24 5.67 18.627 0.296997 12 0.296997Z" fill="white"></path>
+                        </svg>
+                        <p class="text">Click me</p>
+                    </button>
+                </div>
+                <div class="projectcard">
+                    <img src="https://imgs.search.brave.com/dBtpiaT6AyutJi6ES3iPCnFWS4SqRi32iRtTNP2d9_Q/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zMy1h/bHBoYS5maWdtYS5j/b20vaHViL2ZpbGUv/NDA5MzE4ODYzMC81/NjFkZmUzZS1lNWY4/LTQxNWMtOWIyNi1m/YmRmOTQ4OTc3MjIt/Y292ZXIucG5n" alt="">
+                    <h1>Printango <i class="fa-solid fa-print"></i></h1>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel quod quis libero dolor labore error facilis culpa? Doloribus sunt id est eveniet tempore delectus! Accusamus omnis nisi excepturi ut debitis!</p>
+                    <button class="githubbutton">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 0.296997C5.37 0.296997 0 5.67 0 12.297C0 17.6 3.438 22.097 8.205 23.682C8.805 23.795 9.025 23.424 9.025 23.105C9.025 22.82 9.015 22.065 9.01 21.065C5.672 21.789 4.968 19.455 4.968 19.455C4.422 18.07 3.633 17.7 3.633 17.7C2.546 16.956 3.717 16.971 3.717 16.971C4.922 17.055 5.555 18.207 5.555 18.207C6.625 20.042 8.364 19.512 9.05 19.205C9.158 18.429 9.467 17.9 9.81 17.6C7.145 17.3 4.344 16.268 4.344 11.67C4.344 10.36 4.809 9.29 5.579 8.45C5.444 8.147 5.039 6.927 5.684 5.274C5.684 5.274 6.689 4.952 8.984 6.504C9.944 6.237 10.964 6.105 11.984 6.099C13.004 6.105 14.024 6.237 14.984 6.504C17.264 4.952 18.269 5.274 18.269 5.274C18.914 6.927 18.509 8.147 18.389 8.45C19.154 9.29 19.619 10.36 19.619 11.67C19.619 16.28 16.814 17.295 14.144 17.59C14.564 17.95 14.954 18.686 14.954 19.81C14.954 21.416 14.939 22.706 14.939 23.096C14.939 23.411 15.149 23.786 15.764 23.666C20.565 22.092 24 17.592 24 12.297C24 5.67 18.627 0.296997 12 0.296997Z" fill="white"></path>
+                        </svg>
+                        <p class="text">Click me</p>
+                    </button>
+                </div>
+                <div class="projectcard">
+                    <img src="https://imgs.search.brave.com/dBtpiaT6AyutJi6ES3iPCnFWS4SqRi32iRtTNP2d9_Q/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zMy1h/bHBoYS5maWdtYS5j/b20vaHViL2ZpbGUv/NDA5MzE4ODYzMC81/NjFkZmUzZS1lNWY4/LTQxNWMtOWIyNi1m/YmRmOTQ4OTc3MjIt/Y292ZXIucG5n" alt="">
+                    <h1>Printango <i class="fa-solid fa-print"></i></h1>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel quod quis libero dolor labore error facilis culpa? Doloribus sunt id est eveniet tempore delectus! Accusamus omnis nisi excepturi ut debitis!</p>
+                    <button class="githubbutton">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 0.296997C5.37 0.296997 0 5.67 0 12.297C0 17.6 3.438 22.097 8.205 23.682C8.805 23.795 9.025 23.424 9.025 23.105C9.025 22.82 9.015 22.065 9.01 21.065C5.672 21.789 4.968 19.455 4.968 19.455C4.422 18.07 3.633 17.7 3.633 17.7C2.546 16.956 3.717 16.971 3.717 16.971C4.922 17.055 5.555 18.207 5.555 18.207C6.625 20.042 8.364 19.512 9.05 19.205C9.158 18.429 9.467 17.9 9.81 17.6C7.145 17.3 4.344 16.268 4.344 11.67C4.344 10.36 4.809 9.29 5.579 8.45C5.444 8.147 5.039 6.927 5.684 5.274C5.684 5.274 6.689 4.952 8.984 6.504C9.944 6.237 10.964 6.105 11.984 6.099C13.004 6.105 14.024 6.237 14.984 6.504C17.264 4.952 18.269 5.274 18.269 5.274C18.914 6.927 18.509 8.147 18.389 8.45C19.154 9.29 19.619 10.36 19.619 11.67C19.619 16.28 16.814 17.295 14.144 17.59C14.564 17.95 14.954 18.686 14.954 19.81C14.954 21.416 14.939 22.706 14.939 23.096C14.939 23.411 15.149 23.786 15.764 23.666C20.565 22.092 24 17.592 24 12.297C24 5.67 18.627 0.296997 12 0.296997Z" fill="white"></path>
+                        </svg>
+                        <p class="text">Click me</p>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="edu-section">
+            <h2 class="section-title">Education</h2>
+            <div class="edu-container">
+                <div class="edu-card glass">
+                    <div class="card-header">
+                        <h1>B.E | Computer Science | 2025-2029 (PRESENT) <i class="fa-solid fa-user-graduate"></i></h1>
+                        <h2>@ Shri Madhwa Vadiraja Institute of Technology and Management (SMVITM) 
+                            <a href="https://sode-edu.in/smvitm/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </h2>
+                    </div>
+                    <div class="sem-container">
+                        <div class="sem-badge active">
+                            <span class="sem-title">Sem 3: Currently Ongoing... <i class="fa-solid fa-person-running"></i></span>
+                        </div>
+                        <div class="sem-badge">
+                            <span class="sem-title">Sem 2: Completed (8.5 SGPA) <i class="fa-solid fa-circle-check"></i></span>
+                            <div class="learnings">Basics of C Programming | Applied Mathematics for CSE</div>
+                        </div>
+                        <div class="sem-badge">
+                            <span class="sem-title">Sem 1: Completed (8.35 SGPA) <i class="fa-solid fa-circle-check"></i></span>
+                            <div class="learnings">Basics of Python | Applied Mathematics for CSE</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="edu-card glass outline">
+                    <h4>Other Qualifications:</h4>
+                    <ul class="qual-list">
+                        <li>Completed Basic Web Development Workshop (2025-2026) <i class="fa-solid fa-check"></i></li>
+                        <li>Completed Basics of C (2017) <i class="fa-solid fa-check"></i></li>
+                    </ul>
+                </div>
+
+                <div class="edu-card glass secondary">
+                    <div class="card-header">
+                        <h1>12TH (2024-2025) (PCMC) <i class="fa-solid fa-school-flag"></i></h1>
+                        <h2>@ Govinda Dasa Pre-University College (GDPUC) 
+                            <a href="https://govindadasapucollege.com/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </h2>
+                    </div>
+                    <div class="sem-badge">
+                        <span class="sem-title">PU Completed (503/600 [84.66%]) <i class="fa-solid fa-circle-check"></i></span>
+                        <div class="learnings">Basics of C++ | HTML | CSS</div>
+                    </div>
+                    <hr class="divider">
+                    <div class="card-header">
+                        <h1>10TH (2023) <i class="fa-solid fa-school"></i></h1>
+                        <h2>@ Sri Vyasa Maharshi Vidhya Peetha (SVMVP, Mulki) 
+                            <a href="https://spvtrading.in/sri-vyasa-maharshi-vidya-peetha/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </h2>
+                    </div>
+                    <div class="sem-badge">
+                        <span class="sem-title">10TH Standard (579/625) [92.64%] <i class="fa-solid fa-circle-check"></i></span>
+                        <div class="learnings">Basics of MS Excel, Paint, PowerPoint</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/locomotive-scroll/dist/locomotive-scroll.min.js"></script>
+    <script src="script.js"></script>
+
+    
+
+</body>
+</html>
