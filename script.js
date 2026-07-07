@@ -1,68 +1,107 @@
+// Initialize Locomotive Scroll IMMEDIATELY (before DOMContentLoaded)
+let scroll;
+
+function initLocomotiveScroll() {
+  // Destroy previous instance if it exists
+  if (scroll) {
+    scroll.destroy();
+  }
+
+  scroll = new LocomotiveScroll({
+    el: document.querySelector('[data-scroll-container]'),
+    smooth: true,
+    smartphone: {
+      smooth: true
+    },
+    tablet: {
+      smooth: true
+    }
+  });
+
+  // Listen to scroll events
+  scroll.on('scroll', (instance) => {
+    // Update on every scroll
+  });
+}
+
+// Initialize when DOM is ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initLocomotiveScroll);
+} else {
+  initLocomotiveScroll();
+}
+
+// Update scroll on load
+window.addEventListener('load', () => {
+  if (scroll) {
+    scroll.update();
+  }
+});
+
+// Update on resize
+window.addEventListener('resize', () => {
+  if (scroll) {
+    scroll.update();
+  }
+});
+
+// ============================================
+// Icon Link Functionality
+// ============================================
 const icons = document.querySelectorAll('.icons i');
 const linktext = document.getElementById('linktext');
 
 icons.forEach(icon => {
-    const link = icon.getAttribute('data-link');
+  const link = icon.getAttribute('data-link');
 
-    // hover → show link (reset to black)
-    icon.addEventListener('mouseenter', () => {
-        linktext.classList.remove('active');
-        linktext.innerHTML = `<span data-text="${link}">${link}</span>`;
-    });
+  icon.addEventListener('mouseenter', () => {
+    linktext.classList.remove('active');
+    linktext.innerHTML = `<span data-text="${link}">${link}</span>`;
+  });
 
-    // click → copy + green wipe
-    icon.addEventListener('click', () => {
-        navigator.clipboard.writeText(link);
+  icon.addEventListener('click', () => {
+    navigator.clipboard.writeText(link);
+    const text = "Copied to clipboard";
+    linktext.innerHTML = `<span data-text="${text}">${text}</span>`;
+    linktext.classList.remove('active');
+    void linktext.offsetWidth;
+    linktext.classList.add('active');
+  });
 
-        const text = "Copied to clipboard";
-        linktext.innerHTML = `<span data-text="${text}">${text}</span>`;
-
-        linktext.classList.remove('active');
-        void linktext.offsetWidth; // reset animation
-        linktext.classList.add('active');
-    });
-
-    // leave → go back to black + hide
-    icon.addEventListener('mouseleave', () => {
-        linktext.classList.remove('active'); // removes green
-        linktext.style.opacity = 10;
-
-        
-    });
+  icon.addEventListener('mouseleave', () => {
+    linktext.classList.remove('active');
+    linktext.style.opacity = '0.5';
+  });
 });
-// Get modal elements
+
+// ============================================
+// Modal Functionality
+// ============================================
 const modal = document.getElementById('modal');
 const modalClose = document.querySelector('.modal-close');
 
-// Open modal function
 function openModal() {
-    modal.classList.add('show');
+  modal.classList.add('show');
 }
 
-// Close modal function
 function closeModal() {
-    modal.classList.remove('show');
+  modal.classList.remove('show');
 }
 
-// Close when clicking the X button
+// Expose to global scope for HTML onclick handlers
+window.openModal = openModal;
+window.closeModal = closeModal;
+
 modalClose.addEventListener('click', closeModal);
-
-// Close when clicking outside the modal box
 modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-        closeModal();
-    }
+  if (e.target === modal) {
+    closeModal();
+  }
 });
-function downloadResume(){
-    const a = document.createElement('a');
-    a.href = 'resume.pdf';
-    a.download = 'adi.pdf';
-    a.click();
-}
 
-
-
-
+// ============================================
+// Typing Effect - Words
+// ============================================
 const words = [
   "Portfolio",
   "पोर्टफोलियो",
@@ -77,7 +116,6 @@ const words = [
 let i = 0;
 let j = 0;
 let isDeleting = false;
-
 const text1 = document.getElementById("changingtext");
 
 function typeEffect() {
@@ -93,7 +131,7 @@ function typeEffect() {
 
   if (!isDeleting && j === currentWord.length) {
     isDeleting = true;
-    setTimeout(typeEffect, 3000); // wait 3s
+    setTimeout(typeEffect, 3000);
     return;
   }
 
@@ -107,10 +145,21 @@ function typeEffect() {
 
 typeEffect();
 
+// ============================================
+// Dropdown Toggle
+// ============================================
 function toggle() {
-  document.getElementById("content").classList.toggle("show");
+  const content = document.getElementById("content");
+  if (content) {
+    content.classList.toggle("show");
+  }
 }
 
+window.toggle = toggle;
+
+// ============================================
+// Role Changing Effect
+// ============================================
 const roles = [
   "Founder",
   "Builder",
@@ -127,8 +176,9 @@ let n = 0;
 const el = document.getElementById("role");
 
 function changeRole() {
+  if (!el) return;
+  
   el.classList.add("hide");
-
   setTimeout(() => {
     el.textContent = roles[n];
     el.classList.remove("hide");
@@ -136,40 +186,26 @@ function changeRole() {
   }, 400);
 }
 
-changeRole();
-setInterval(changeRole, 2000);
+if (el) {
+  changeRole();
+  setInterval(changeRole, 2000);
+}
 
-
-
-        // Initialize Locomotive Scroll
-        const scroll = new LocomotiveScroll({
-  el: document.querySelector('[data-scroll-container]'),
-  smooth: true,
-  lerp: 0.06,
-  multiplier: 1.1
-});
-
-        // Update scroll on window resize and load
-        window.addEventListener('load', () => {
-            scroll.update();
-        });
-
-        window.addEventListener('resize', () => {
-            scroll.update();
-        });
-
-        // Handle navbar links
-       document.querySelectorAll('.nav a').forEach(anchor => {
+// ============================================
+// Smooth Scroll for Navigation Links
+// ============================================
+document.querySelectorAll('a[data-scroll-to]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
     e.preventDefault();
-
-    const target = document.querySelector(this.getAttribute('href'));
-
-    scroll.scrollTo(target, {
-      offset: -100, // adjust for your fixed navbar height
-      duration: 1200,
-      easing: [0.25, 0.00, 0.35, 1.00]
-    });
+    const href = this.getAttribute('href');
+    const target = document.querySelector(href);
+    
+    if (target && scroll) {
+      scroll.scrollTo(target, {
+        offset: -80,
+        duration: 1200,
+        easing: [0.25, 0.00, 0.35, 1.00]
+      });
+    }
   });
 });
-    
